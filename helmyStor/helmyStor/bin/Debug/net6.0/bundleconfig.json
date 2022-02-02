@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "https://fonts.googleapis.com/css?family=Lato:300,400,700,900",
+      "wwwroot/assets/css/fontawesome.css",
+      "wwwroot/assets/css/slick.css",
+      "wwwroot/assets/css/slick-theme.css",
+      "wwwroot/assets/css/animate.css",
+      "wwwroot/assets/css/themify-icons.css",
+      "wwwroot/assets/css/bootstrap.css",
+      "wwwroot/assets/css/color1.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/assets/js/jquery-3.3.1.min.js",
+      "wwwroot/assets/js/jquery-ui.min.js",
+      "wwwroot/assets/js/jquery.exitintent.js",
+      "wwwroot/assets/js/popper.min.js",
+      "wwwroot/assets/js/slick.js",
+      "wwwroot/assets/js/menu.js",
+      "wwwroot/assets/js/lazysizes.min.js",
+      "wwwroot/assets/js/bootstrap.js",
+      "wwwroot/assets/js/bootstrap-notify.min.js",
+      "wwwroot/assets/js/fly-cart.js",
+      "wwwroot/assets/js/script.js"
+
+
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

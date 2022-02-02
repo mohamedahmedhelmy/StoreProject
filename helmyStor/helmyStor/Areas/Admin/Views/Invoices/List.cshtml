@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "List";
+}
+@section Styles {
+        <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
+}
+
+@if (Model.Any())
+{
+
+
+    <div class="content-body">
+
+
+        <!-- Add rows table -->
+    <section id="add-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add rows</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <div id="DataTables_Table_3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table add-rows dataTable" id="DataTables_Table_3" role="grid" aria-describedby="DataTables_Table_3_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 195.562px;">Customer Id</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 195.562px;">Customer Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 195.562px;">Address</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 195.562px;">Email</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 195.562px;">Phone</th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 5: activate to sort column descending" aria-sort="ascending" style="width: 100.825px;">
+                                                                Order
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var customer in Model)
+                                                        {
+                                                            <tr role="row" class="odd">
+                                                                <th class="">@customer.CustomerId</th>
+                                                                <th class="">@customer.CustomerName</th>
+                                                                <th class="">@customer.Address</th>
+                                                                <th class="">@customer.Email</th>
+                                                                <th class="">@customer.PhoneNumber</th>
+                                                                
+                                                                <th class="sorting_1">
+                                                                    <a class="btn btn-success"  asp-action="Details" asp-route-Id="@customer.CustomerId" >Details</a>
+                                                                </th>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Add rows table -->
+
+</div>
+}
+else {
+    <h3>Not Found Any Orders</h3>
+}
+
+
+
+
+
+@section Scripts{
+        <script src="~/Admin/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="~/Admin/app-assets/js/scripts/datatables/datatable.js"></script>
+    <!-- END: Page JS-->
+}
+
+
+

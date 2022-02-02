@@ -1,0 +1,15 @@
+﻿@inject SignInManager<ApplicationUser> _signInManager
+@if (_signInManager.IsSignedIn(User))
+{
+    @User.Identity.Name
+    <ul class="onhover-show-div">
+        <li><a asp-controller="Account" asp-action="LogOut">Logout</a></li>
+    </ul>
+}
+else
+{
+    <ul class="onhover-show-div">
+        <li><a asp-controller="Account" asp-action="Login" >Login</a></li>
+        <li><a asp-controller="Account" asp-action="Register" >Register</a></li>
+    </ul>
+}

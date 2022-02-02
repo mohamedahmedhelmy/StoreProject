@@ -1,0 +1,51 @@
+﻿@model RoleViewModel
+
+@{
+    ViewData["Title"] = "CreateRole";
+}
+
+<div class="content-body">
+    <!-- Basic Horizontal form layout section start -->
+    <section id="basic-horizontal-layouts">
+        <div class="row match-height">
+            <div class="col-md-12 col-12">
+                <div class="card" style="height: 419px;">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form form-horizontal" method="post" role="form" asp-action="CreateRole">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Role Name</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input asp-for="RoleName" type="text" class="form-control" placeholder="Role Name">
+                                                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 offset-md-2">
+                                            <button type="submit" value="CreateRole" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                            <a asp-action="ListRoles" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

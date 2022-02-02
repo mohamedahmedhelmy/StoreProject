@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "List";
+}
+@section Styles {
+        <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
+}
+
+@if (Model.Any())
+{
+
+
+    <div class="content-body">
+
+
+        <!-- Add rows table -->
+    <section id="add-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add rows</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+
+                                <a  asp-action="Create"  class="btn btn-primary"> Add Product</a>
+                                <div class="table-responsive">
+                                    <div id="DataTables_Table_3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table add-rows dataTable" id="DataTables_Table_3" role="grid" aria-describedby="DataTables_Table_3_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 195.562px;">Product Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 2: activate to sort column ascending" style="width: 195.562px;">Sales Price</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 3: activate to sort column ascending" style="width: 195.562px;">Buy Price</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 4: activate to sort column ascending" style="width: 195.562px;">Image</th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 5: activate to sort column descending" aria-sort="ascending" style="width: 201.825px;">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var pro in Model)
+                                                        {
+                                                            <tr role="row" class="odd">
+                                                                <th class="">@pro.ProductName</th>
+                                                                <th class="">@pro.SalesPrice</th>
+                                                                <th class="">@pro.BuyPrice</th>
+                                                                <th class=""><img src="@string.Format("/Uploads/{0}",@pro.ImageName)" height="50" width="50" /></th>
+                                                                <th class="sorting_1">
+                                                                    <a class="btn btn-info"  asp-action="Edit" asp-route-Id="@pro.ProductId" >Edit</a>
+                                                                    <a class="btn btn-danger" asp-action="Delete" asp-route-Id="@pro.ProductId">Delete</a>
+                                                                </th>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Add rows table -->
+
+</div>
+}
+else {
+    <a  asp-action="Create"  class="btn btn-primary mb-3"> Add Product</a>
+    <h3>Not Found Any Product</h3>
+}
+
+
+
+
+
+@section Scripts{
+        <script src="~/Admin/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="~/Admin/app-assets/js/scripts/datatables/datatable.js"></script>
+    <!-- END: Page JS-->
+}
+
+
+

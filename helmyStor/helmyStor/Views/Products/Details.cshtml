@@ -1,0 +1,56 @@
+﻿@model ProductDetails
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- section start -->
+<section>
+    <div class="collection-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="product-slick">
+                        <div>
+                            <img src="@string.Format("/Uploads/{0}",Model.Product.ImageName)" alt=""
+                                 width="600" height="600" class="img-fluid blur-up lazyload image_zoom_cls-0">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-7 rtl-text">
+                    <div class="product-right">
+                        <h2>@Model.Product.ProductName</h2>
+                        <h3>@Model.Product.SalesPrice</h3>
+                        <div class="product-buttons">
+                            <a class="btn btn-solid" asp-controller="Products" asp-action="AddToCart" asp-route-id="@Model.Product.ProductId">add to cart</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+<!-- product section start -->
+<section class="section-b-space ratio_asos">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 product-related">
+                <h2>Related products</h2>
+            </div>
+        </div>
+        <div class="row search-product">
+            @foreach (var product in Model.LstRelatedProducts)
+            {
+                <div class="col-xl-2 col-md-4 col-sm-6">
+
+                    <partial name="_Product" model="product" />
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- product section end -->

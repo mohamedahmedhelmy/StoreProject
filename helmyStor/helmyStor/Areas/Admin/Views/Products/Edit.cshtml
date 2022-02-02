@@ -1,0 +1,88 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content-body">
+    <!-- Basic Horizontal form layout section start -->
+    <section id="basic-horizontal-layouts">
+        <div class="row match-height">
+            <div class="col-md-12 col-12">
+                <div class="card" style="height: 419px;">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form form-horizontal" enctype="multipart/form-data" method="post" role="form" asp-action="Edit">
+                              <div class="row">
+                                 <div class="col-8">
+                                  <div class="form-body">
+                                        <div >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Category Name</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="hidden" asp-for="ProductId" />
+                                                    <input type="hidden" asp-for="ImageName" />
+                                                    <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.LsCategories,"CategoryId","CategoryName"))"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Product Name</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input asp-for="ProductName" type="text" class="form-control" placeholder="Product Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Sales Price</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input asp-for="SalesPrice" type="number" class="form-control" placeholder="Sales Price">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Purchase Price</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input asp-for="BuyPrice" type="number" class="form-control" placeholder="Purchase Price">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Image</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input asp-for="ImageName" type="file" multiple name="Files" class="form-control" placeholder="Item Image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 offset-md-2">
+                                            <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                            <a asp-action="List"  class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Cancel</a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="@string.Format("/Uploads/{0}",@Model.ImageName)" width="350" height="350"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // Basic Horizontal form layout section end -->
+</div>

@@ -1,0 +1,62 @@
+﻿@model Domains.Customer
+
+
+@{
+    ViewData["Title"] = "ChackOut";
+}
+
+<!-- section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="checkout-page">
+            <div class="checkout-form">
+                 <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                      <form asp-action="ChackOut" role="form" method="post">
+                            <div class="row check-out">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <input type="hidden" asp-for="CustomerId" />
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <label asp-for="CustomerName" class="control-label"></label>
+                                    <input asp-for="CustomerName" class="form-control" />
+                                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <label asp-for="PhoneNumber" class="control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <label asp-for="Address" class="control-label"></label>
+                                    <input asp-for="Address" class="form-control" />
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                                   <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <div class="payment-box">
+                                        <input type="submit" value="Confirm Order" class="btn btn-solid" />
+                                    </div>
+                                </div>
+                              </div>
+                                   </form>
+                            </div>
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="checkout-details">
+                                <partial name="_OrderBox"/>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section end -->
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

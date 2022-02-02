@@ -1,0 +1,111 @@
+﻿@model ShoppingCart
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>cart</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active">cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!--section start-->
+<section class="cart-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table cart-table table-responsive-xs">
+                    <thead>
+                        <tr class="table-head">
+                            <th scope="col">image</th>
+                            <th scope="col">product name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">quantity</th>
+                            <th scope="col">total</th>
+                            <th scope="col">action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.LstCart.ToList())
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-controller="Products" asp-action="Details" asp-route-id="@product.ProductId"><img src="@string.Format("/Uploads/{0}",product.ImageName)" alt=""></a>
+                                </td>
+                                <td>
+                                    <a asp-controller="Products" asp-action="Details" asp-route-id="@product.ProductId">@product.ProductName</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col-xs-3">
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input type="text" name="quantity" class="form-control input-number"
+                                                       value="@product.Qty">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">@product.Price</h2>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <h2 class="td-color">
+                                                <a href="#" class="icon"><i class="ti-close"></i></a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <h2>@product.Price</h2>
+                                </td>
+                                <td>
+                                    <div class="qty-box">
+                                        <div class="input-group">
+                                            <a class="btn btn-solid col-2 " asp-controller="Products" asp-action="RemoveFromCart" asp-route-id="@product.ProductId"><i class="fa fa-minus"></i></a>
+                                            <input class="tnm col-4" readonly type="number"
+                                               data-price="@product.Price" onkeyup="ChangeQty(this);" value="@product.Qty" />
+                                            <a class="btn btn-solid col-2  " asp-controller="Products" asp-action="AddToCart" asp-route-id="@product.ProductId"><i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    @product.Total
+                                </td>
+                                <td><a asp-action="DeleteItem" asp-route-id="@product.ProductId" class="icon"><i class="ti-close"></i></a></td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <table class="table cart-table table-responsive-md">
+                    <tfoot>
+                        <tr>
+                            <td>total price :</td>
+                            <td>
+                                <h2 id="total1">@Model.Total</h2>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row cart-buttons">
+            <div class="col-6"><a asp-controller="Home" asp-action="Index" class="btn btn-solid">continue shopping</a></div>
+            <div class="col-6"><a asp-controller="Orders" asp-action="ChackOut" class="btn btn-solid">check out</a></div>
+        </div>
+    </div>
+</section>
+<!--section end-->

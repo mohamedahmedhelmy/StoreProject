@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="rtl">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Dashboard analytics - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="~/Admin/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Admin/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/extensions/tether-theme-arrows.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/extensions/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/extensions/shepherd-theme-default.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/colors.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/components.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/pages/dashboard-analytics.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/pages/card-analytics.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/plugins/tour/tour.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/css-rtl/custom-rtl.css">
+    <link rel="stylesheet" type="text/css" href="~/Admin/assets/css/style-rtl.css">
+    <!-- END: Custom CSS-->
+        @RenderSection("Styles",required:false)
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-dark navbar-shadow">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="navbar-collapse" id="navbar-mobile">
+                    <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto"><a class="navbar-brand" asp-area="Admin" asp-controller="Products" asp-action="List">
+                        <div class="brand-logo"></div>
+                        <h2 class="brand-text mb-0">Vuexy</h2>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a asp-area="Admin" asp-controller="Products" asp-action="List"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Productss</span></a>
+                    <ul class="menu-content">
+                        <li><a asp-area="Admin" asp-controller="Products" asp-action="Create"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Create Product</span></a>
+                        </li>                                  
+                        <li><a asp-area="Admin" asp-controller="Products" asp-action="List"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">All Products</span></a>
+                        </li>                                   
+
+                    </ul>
+                </li>
+                 <li class=" nav-item"><a href="#"><i class="feather icon-unlock"></i><span class="menu-title" data-i18n="Authentication">Authentication</span></a>
+                    <ul class="menu-content">
+                        <li><a asp-area="Admin" asp-controller="Adminstraition" asp-action="CreateRole"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Card">Create Role</span></a>
+                        </li>                                   
+                        <li><a asp-area="Admin" asp-controller="Adminstraition" asp-action="ListRoles"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Card">All Roles</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Category</span></a>
+                    <ul class="menu-content">
+                        <li><a asp-area="Admin" asp-controller="Category" asp-action="Create"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">Create Category</span></a>
+                        </li>
+                        <li><a asp-area="Admin" asp-controller="Category" asp-action="List"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Thumb View">All Categories</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="feather icon-eye"></i><span class="menu-title" data-i18n="Icons">Sliders</span></a>
+                    <ul class="menu-content">
+                        <li><a asp-area="Admin" asp-controller="Slider" asp-action="Create"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Feather">Create Slider</span></a>
+                        </li>
+                        <li><a asp-area="Admin" asp-controller="Slider" asp-action="List">><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Font Awesome">All Sliders</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="feather icon-credit-card"></i><span class="menu-title" data-i18n="Card">Orders</span></a>
+                    <ul class="menu-content">
+                        <li><a asp-area="Admin" asp-controller="Invoices" asp-action="List"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Basic">All Orders</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+
+     @RenderBody();
+      </div>
+    </div>
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2020<a class="text-bold-800 grey darken-2" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent,</a>All rights Reserved</span><span class="float-md-right d-none d-md-block">Hand-crafted & Made with<i class="feather icon-heart pink"></i></span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
+        </p>
+    </footer>
+    <!-- END: Footer-->
+    <!-- BEGIN: Vendor JS-->
+    <script src="~/Admin/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    @*<script src="~/Admin/app-assets/vendors/js/charts/apexcharts.min.js"></script>*@
+    <script src="~/Admin/app-assets/vendors/js/extensions/tether.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/extensions/shepherd.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="~/Admin/app-assets/js/core/app-menu.js"></script>
+    <script src="~/Admin/app-assets/js/core/app.js"></script>
+    <script src="~/Admin/app-assets/js/scripts/components.js"></script>
+    <!-- END: Theme JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="~/Admin/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+    <!-- END: Page JS-->
+    @RenderSection("Scripts",required:false)
+</body>
+<!-- END: Body-->
+
+</html>

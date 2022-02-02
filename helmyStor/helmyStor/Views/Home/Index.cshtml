@@ -1,0 +1,241 @@
+﻿@model HomePage
+ <!-- Home slider -->
+    <section class="p-0">
+        <div class="slide-1 home-slider">
+            @foreach (var item in Model.LstSlider)
+            {
+             <div>
+                <div class="home  text-center">
+                    <img src="@string.Format("/Sliders/{0}",item.SliderImage)" width="1920" height="560" alt="" class="bg-img blur-up lazyload">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="slider-contain">
+                                    <div>
+                                        <h4>@item.Description</h4>
+                                        <h1>men fashion</h1>
+                                        <a href="#" class="btn btn-solid">shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+    </section>
+    <!-- Home slider end -->
+
+
+<!-- Paragraph-->
+<div class="title1 section-t-space">
+    <h4>special offer</h4>
+    <h2 class="title-inner1">Best Seller</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+        </div>
+    </div>
+</div>
+<!-- Paragraph end -->
+<!-- Product slider -->
+<section class="section-b-space p-t-0 ratio_asos">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="product-4 product-m no-arrow">
+                    @foreach (var product in Model.LstBestSeller)
+                    {
+                        <partial name="_Product" model="product" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product slider end -->
+<!-- Parallax banner -->
+<section class="p-0">
+    @foreach (var banner in Model.banner)
+    {
+        <div class="full-banner parallax text-center p-left">
+            <img src="@string.Format("/Sliders/{0}",banner.SliderImage)" alt="" class="bg-img blur-up lazyload">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="banner-contain">
+                            <h3>@banner.Description</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     }
+
+</section>
+<!-- Parallax banner end -->
+<!-- Tab product -->
+<div class="title1 section-t-space">
+    <h4>exclusive products</h4>
+    <h2 class="title-inner1">special products</h2>
+</div>
+<section class="section-b-space p-t-0 ratio_asos">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="theme-tab">
+                    <ul class="tabs tab-title">
+                        <li class="current"><a href="tab-4">All Products</a></li>
+
+                        @foreach (var cat in Model.LstCategories)
+                        {
+                            <li class=""><a href="@string.Format("tab-{0}",cat.Category.CategoryName)">@cat.Category.CategoryName</a></li>
+                        }
+
+                    </ul>
+                    <div class="tab-content-cls">
+                        <div id="tab-4" class="tab-content active default">
+                            <div class="no-slider row">
+                                @foreach (var product in Model.LstAllProduct)
+                                {
+                                    <partial name="_Product" model="product" />
+
+                                }
+                            </div>
+                        </div>
+                        @foreach (var cat in Model.LstCategories)
+                        {
+                            <div id="@string.Format("tab-{0}",cat.Category.CategoryName)" class="tab-content">
+                                <div class="no-slider row">
+                                    @foreach (var product in Model.LstAllProduct.Where(b => b.Category.CategoryName == cat.Category.CategoryName))
+                                    {
+                                        <partial name="_Product" model="product" />
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tab product end -->
+<!-- blog section -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="title1 section-t-space">
+                <h4>Recent Story</h4>
+                <h2 class="title-inner1">from the blog</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="blog p-t-0 ratio2_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slide-3 no-arrow">
+                    @foreach (var product in Model.LstBestSeller)
+                    {
+                        <div class="col-md-12">
+                            <a asp-controller="Items" asp-action="Details" asp-route-id="@product.ProductId">
+                                <div class="classic-effect">
+                                    <div>
+                                        <img src="@string.Format("/Uploads/{0}",product.ImageName)" class="img-fluid blur-up lazyload bg-img"
+                                             alt="">
+                                    </div>
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog section end -->
+<!-- instagram section -->
+<section class="instagram ratio_square">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <h2 class="title-borderless">Instagram</h2>
+                <div class="slide-7 no-arrow slick-instagram">
+                    @foreach (var product in Model.LstInstgram)
+                     {
+                        <div>
+
+                            <div class="instagram-box">
+                                <img src="@string.Format("/Uploads/{0}",product.ImageName)" class="bg-img"
+                                     alt="Avatar" style="width:100%">
+                                <div class="overlay"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            </div>
+
+                        </div>
+                     }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- instagram section end -->
+<!--  logo section -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slide-6 no-arrow">
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/1.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/2.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/3.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/4.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/5.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/6.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/7.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="logo-block">
+                            <img src="~/assets/images/logos/8.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  logo section end-->

@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{ 
+    ShoppingCart OshoppingCart = HttpContextAccessor.HttpContext.Session.Get<ShoppingCart>("Cart");
+    if (OshoppingCart==null)
+    {
+        OshoppingCart = new ShoppingCart();
+    }
+}
+
+<div class="order-box">
+    <div class="title-box">
+        <div>Product <span>Image</span> <span>Total</span></div>
+    </div>
+    <ul class="qty">
+        @foreach (var product in OshoppingCart.LstCart)
+        {
+
+            <li>@product.ProductName × @product.Qty <span><img src="@string.Format("/Uploads/{0}",product.ImageName)" height="30" width="30" alt=""></span> <span>@product.Price</span></li>
+
+        }
+
+    </ul>
+
+    <ul class="total">
+        <li>Total <span class="count">@OshoppingCart.Total</span></li>
+    </ul>
+</div>

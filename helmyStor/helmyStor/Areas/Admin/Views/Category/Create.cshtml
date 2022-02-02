@@ -1,0 +1,41 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content-body">
+    <!-- Basic Horizontal form layout section start -->
+    <section id="basic-horizontal-layouts">
+        <div class="row match-height">
+            <div class="col-md-12 col-12">
+                <div class="card" style="height: 419px;">
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form form-horizontal" enctype="multipart/form-data" method="post" role="form" asp-action="Create">
+                           <div class="form-body">
+                                <div class="row">
+                                        <div class="col-12" >
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <span>Category Name</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input asp-for="CategoryName" type="text" class="form-control" placeholder="Category Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 offset-md-2">
+                                            <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                            <a asp-action="List"  class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // Basic Horizontal form layout section end -->
+</div>

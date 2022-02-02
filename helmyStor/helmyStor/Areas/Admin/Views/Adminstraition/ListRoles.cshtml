@@ -1,0 +1,86 @@
+﻿@inject UserManager<ApplicationUser> userManager;
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+@{
+    ViewData["Title"] = "ListRoles";
+}
+@section Styles {
+        <link rel="stylesheet" type="text/css" href="~/Admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
+}
+@if (Model.Any())
+{
+    <div class="content-body">
+
+
+    <!-- Add rows table -->
+    <section id="add-row">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add rows</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+
+                            <a  asp-action="CreateRole"  class="btn btn-primary"> Add Role</a>
+                            <div class="table-responsive">
+                                <div id="DataTables_Table_3_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table add-rows dataTable" id="DataTables_Table_3" role="grid" aria-describedby="DataTables_Table_3_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 1: activate to sort column ascending" style="width: 195.562px;">Role Name</th>
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_3" rowspan="1" colspan="1" aria-label="Column 5: activate to sort column descending" aria-sort="ascending" style="width: 201.825px;">
+
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                               @foreach (var Role in Model)
+                                                {
+                                                    <tr role="row" class="odd">
+                                                    <th class="">@Role.Name</th>
+                                                    <th class="sorting_1">
+                                                        <a class="btn btn-info"  asp-action="EditRole" asp-route-Id="@Role.Id" >Edit</a>
+                                                                    @{
+                                                                        var UserRole = await userManager.GetUsersInRoleAsync(Role.Name);
+                                                                    }
+                                                                    @if(UserRole.Count==0){  <a asp-action="DeleteRole"  asp-route-Id="@Role.Id" class="btn btn-danger">Delete</a>}
+                                                                  
+                                                    </th>
+                                                    </tr>
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ Add rows table -->
+
+</div>
+}
+else {
+        <a  asp-action="CreateRole"  class="btn btn-primary mb-3"> Add Role</a>
+        <h3>Not Found Any Role</h3>
+    }
+@section Scripts{
+        <script src="~/Admin/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+    <script src="~/Admin/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="~/Admin/app-assets/js/scripts/datatables/datatable.js"></script>
+    <!-- END: Page JS-->
+}

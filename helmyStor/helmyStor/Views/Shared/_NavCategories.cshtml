@@ -1,0 +1,9 @@
+﻿@inject IProductService productService
+
+
+
+@foreach (var cat in productService.GetAll().GroupBy(b => b.CategoryId).
+    Select(b => b.FirstOrDefault()).ToList())
+{
+    <li class=""><a asp-controller="Home" asp-action="NavList" asp-route-Id="@cat.CategoryId">@cat.Category.CategoryName</a></li>
+}
