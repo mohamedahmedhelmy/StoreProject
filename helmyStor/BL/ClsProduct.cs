@@ -73,7 +73,7 @@ namespace BL
 
         public Product GetById(int id)
         {
-            return  ctx.Products.FirstOrDefault(b => b.ProductId == id);
+            return  ctx.Products.Include(n=>n.Category).FirstOrDefault(b => b.ProductId == id);
         }
 
         public List<Product> GetRelatedProducts(decimal Price)

@@ -10,3 +10,15 @@ E:\pro\helmyStor\Domains\obj\Debug\net6.0\Domains.dll
 E:\pro\helmyStor\Domains\obj\Debug\net6.0\ref\Domains.dll
 E:\pro\helmyStor\Domains\obj\Debug\net6.0\Domains.pdb
 E:\pro\helmyStor\Domains\obj\Debug\net6.0\Domains.csproj.AssemblyReference.cache
+E:\pro\Store\StoreProject\helmyStor\Domains\bin\Debug\net6.0\Domains.deps.json
+E:\pro\Store\StoreProject\helmyStor\Domains\bin\Debug\net6.0\Domains.dll
+E:\pro\Store\StoreProject\helmyStor\Domains\bin\Debug\net6.0\ref\Domains.dll
+E:\pro\Store\StoreProject\helmyStor\Domains\bin\Debug\net6.0\Domains.pdb
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.csproj.AssemblyReference.cache
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.GeneratedMSBuildEditorConfig.editorconfig
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.AssemblyInfoInputs.cache
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.AssemblyInfo.cs
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.csproj.CoreCompileInputs.cache
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.dll
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\ref\Domains.dll
+E:\pro\Store\StoreProject\helmyStor\Domains\obj\Debug\net6.0\Domains.pdb

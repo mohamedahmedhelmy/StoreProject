@@ -14,7 +14,7 @@ namespace Domains
         public int CategoryId { get; set; }
 
         [Display(Name ="Category Name")]
-        public string CategoryName { get; set; } = null!;
+        public string CategoryName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

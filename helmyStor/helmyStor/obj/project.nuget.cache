@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "55SMnLinCTDTTF7CkvNbdpv9QcDFoCZVXes243WlvNkqfrH4q/WbpaE0L8fEkUFlgiZW5a6cJkAW9ALqlPYJNw==",
+  "dgSpecHash": "f016YUwZxgzfld3neaDxhnBIeVMwLMyOlF7/X/xKYxBKSZY+LdKmysAIOOXc6C43f/9AS7blJt8+cbpzg9hceg==",
   "success": true,
-  "projectFilePath": "E:\\pro\\helmyStor\\helmyStor\\helmyStor.csproj",
+  "projectFilePath": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\helmyStor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Helmy\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
     "C:\\Users\\Helmy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

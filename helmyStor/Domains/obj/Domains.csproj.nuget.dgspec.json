@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\pro\\helmyStor\\Domains\\Domains.csproj": {}
+    "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj": {}
   },
   "projects": {
-    "E:\\pro\\helmyStor\\Domains\\Domains.csproj": {
+    "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\pro\\helmyStor\\Domains\\Domains.csproj",
+        "projectUniqueName": "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj",
         "projectName": "Domains",
-        "projectPath": "E:\\pro\\helmyStor\\Domains\\Domains.csproj",
+        "projectPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj",
         "packagesPath": "C:\\Users\\Helmy\\.nuget\\packages\\",
-        "outputPath": "E:\\pro\\helmyStor\\Domains\\obj\\",
+        "outputPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Helmy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }

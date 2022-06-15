@@ -56,7 +56,7 @@ namespace hemlyStor.Areas.Admin.Controllers
                 }
 
                 product.ImageName = ImagePath;
-                if (product.ProductId == null)
+                if (product.ProductId == 0)
                 {
                     productService.Add(product);
                     return RedirectToAction("List");

@@ -10750,11 +10750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\pro\\helmyStor\\helmyStor\\helmyStor.csproj",
+      "projectUniqueName": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\helmyStor.csproj",
       "projectName": "helmyStor",
-      "projectPath": "E:\\pro\\helmyStor\\helmyStor\\helmyStor.csproj",
+      "projectPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\helmyStor.csproj",
       "packagesPath": "C:\\Users\\Helmy\\.nuget\\packages\\",
-      "outputPath": "E:\\pro\\helmyStor\\helmyStor\\obj\\",
+      "outputPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Helmy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10771,11 +10771,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\pro\\helmyStor\\BL\\BL.csproj": {
-              "projectPath": "E:\\pro\\helmyStor\\BL\\BL.csproj"
+            "E:\\pro\\Store\\StoreProject\\helmyStor\\BL\\BL.csproj": {
+              "projectPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\BL\\BL.csproj"
             },
-            "E:\\pro\\helmyStor\\Domains\\Domains.csproj": {
-              "projectPath": "E:\\pro\\helmyStor\\Domains\\Domains.csproj"
+            "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj": {
+              "projectPath": "E:\\pro\\Store\\StoreProject\\helmyStor\\Domains\\Domains.csproj"
             }
           }
         }
@@ -10873,7 +10873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }
