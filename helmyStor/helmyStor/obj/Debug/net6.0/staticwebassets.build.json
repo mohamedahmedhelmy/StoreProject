@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gkRR745/N2CJmZ9yVUPPugomUbDtSNkv1t6gwyAP4yI=",
+  "Hash": "AQp3KgmyrEVM4BrAbmit93auSmfzIo6Cak0IHJswAzM=",
   "Source": "helmyStor",
   "BasePath": "_content/helmyStor",
   "Mode": "Default",
@@ -91696,6 +91696,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\c60059f8-947d-4ded-bfdc-ce2bf7e0fb5a.jpg"
+    },
+    {
+      "Identity": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\wwwroot\\Uploads\\ca1ffc4e-4401-4608-a06e-16e916a39f10.jpg",
+      "SourceId": "helmyStor",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\wwwroot\\",
+      "BasePath": "_content/helmyStor",
+      "RelativePath": "Uploads/ca1ffc4e-4401-4608-a06e-16e916a39f10.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\ca1ffc4e-4401-4608-a06e-16e916a39f10.jpg"
     },
     {
       "Identity": "E:\\pro\\Store\\StoreProject\\helmyStor\\helmyStor\\wwwroot\\Uploads\\d542cbc6-202a-4808-ac3c-48699dbcd041.jpg",
